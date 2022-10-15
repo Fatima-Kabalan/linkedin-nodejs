@@ -1,14 +1,17 @@
 const express = require('express');
-
 const app = express();
+const db = require('./config/db.config');
 
-//API
-app.get("/user", () => {
-    console.log("hello world")
-})
+app.use(express.json())
+
+
 
 //server
 app.listen(8000, (err) => {
-    if (err) console.log(err)
-    console.log("server started on port 8000")
+    if (err){
+        console.log(err)
+    } else {
+        console.log("Server running on port 8000");
+        db()
+    }
 })
