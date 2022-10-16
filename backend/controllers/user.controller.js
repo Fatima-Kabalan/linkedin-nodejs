@@ -6,16 +6,15 @@ const getAllUsers = async (req, res) => {
 }
 
 const getAllCompanies = async (req, res) => {
-    const company = req.company;
-    res.json({company: company});
+    userModel.find({user_type: "company"}).then((users)=> res.send(users))
 }
 
 const updateUser = async (req, res) => {
     const {id, ...data} = req.body
     userModel.findByIdAndUpdate(id,{
-        name: data.namee,
-        email: data.emaill,
-        gender: data.genderr
+        name: data.name,
+        email: data.email,
+        
     })
     .then((user)=>res.send(user))
     .catch((err)=>res.status(400).send(err))
