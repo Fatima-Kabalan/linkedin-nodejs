@@ -13,10 +13,10 @@ const updateUser = async (req, res) => {
     const {id, ...data} = req.body
     userModel.findByIdAndUpdate(id,{
         name: data.name,
-        email: data.email,
-        
+        profile_photo: data.profile_photo,
+        password:data.password
     })
-    .then((user)=>res.send(user))
+    .then((user)=>res.json(user))
     .catch((err)=>res.status(400).send(err))
 }
 
