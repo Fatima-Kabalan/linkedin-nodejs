@@ -20,7 +20,7 @@ const login = async (req,res)=>{
      res.status(200).json([user,token]);
 }
 
-
+// signup api
 const signup = async (req, res)=>{
     const {name, email, password} = req.body;
     try{
