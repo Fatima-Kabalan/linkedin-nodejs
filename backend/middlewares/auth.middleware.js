@@ -3,7 +3,6 @@ const User = require('../models/user.model');
 
 
 // next is to move to another thing after checking the authentication 
-
 const authMiddleware = async (req, res, next) => {
     const token = req.headers.authorization.split(" ")[1];
 
@@ -17,7 +16,6 @@ const authMiddleware = async (req, res, next) => {
     }catch(err){
         return res.status(401).json({message: "Unauthorized"})
     }
-
 }
 
 module.exports = authMiddleware;

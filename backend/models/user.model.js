@@ -16,8 +16,18 @@ const userSchema = new mongoose.Schema({
         type: String,
         required: 'password is required',
         select:'false',
+    }, 
+    user_type:{
+        type: String,
+        required: true,
     },
-
+    profile_picture:{
+        type: String,
+    },
+    easy_applty:{
+        type: String,
+        required: true,
+    },
 });
 
 const model = mongoose.model('User', userSchema);
