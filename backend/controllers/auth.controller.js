@@ -6,18 +6,19 @@ const jwt = require('jsonwebtoken');
 
 const login = async (req,res)=>{
     const {email, password} = req.body;
-    
-    const user = await User.findOne({email}).select("+password");
-
-    if(!user) return res.status(404).json({message: "Invalid Credentials"});
-
-    const isMatch = bcrypt.compare(password, user.password);
-    if(!isMatch) return res.status(404).json({message: "Invalid Credentials"});
-
-    const token = jwt.sign({email: user.email, name: user.name, userType: 1}, process.env.JWT_SECRET_KEY, {
-        expiresIn: '1h'
-    });
-    res.status(200).json(token)
+    // finding user based on email
+    // lean is to make sure thatit will return json data 
+    const user = await User.findOne({ email: email }).lean();
+    //if there is no such user return invalid credentials
+    if(!user) return res.status(404).json({message:"Invalid credentials"});
+    // checking password by comparing the input password and the user's password that's located in db
+    const isMatch =bcrypt.compare(password , user.password);
+    // making sure that the password is matched 
+    if(!isMatch) return res.status(404).json({message:"Invalid credentials"});
+    // creating a token
+    const token = jwt.sign({email:user.email , name:user.name }, process.env.JWT_SECRET_KEY)
+    expiresIn = "42 hr";
+     res.status(200).json([user,token]);
 }
 
 const signup = async (req, res)=>{
