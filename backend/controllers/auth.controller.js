@@ -21,12 +21,13 @@ const login = async (req,res)=>{
 
 // signup api
 const signup = async (req, res)=>{
-    const {name, email, password , user_type} = req.body;
+    const {name, email, password , user_type , profile_picture} = req.body;
     try{
         const user = new User();
         user.name = name;
         user.email = email;
         user.user_type = user_type;
+        user.profile_picture = profile_picture;
         user.password = await bcrypt.hash(password, 10);
 
         await user.save();
