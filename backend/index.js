@@ -1,17 +1,19 @@
 const express = require('express');
 const app = express();
-const db = require('./config/db.config');
+require('dotenv').config();
+require('./config/db.config');
 
 app.use(express.json())
 
 
+const authRoutes = require('./routes/auth.routes');
+app.use('/auth', authRoutes)
+
+const userRoutes = require('./routes/user.routes');
+app.use('/user',userRoutes);
 
 //server
-app.listen(8000, (err) => {
-    if (err){
-        console.log(err)
-    } else {
-        console.log("Server running on port 8000");
-        db()
-    }
+app.listen(process.env.PORT, (err)=>{
+    if(err) throw err;
+    console.log(`server running on port ${process.env.PORT}`);
 })
