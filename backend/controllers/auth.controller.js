@@ -3,7 +3,6 @@ const User = require('../models/user.model');
 const jwt = require('jsonwebtoken');
 
 
-
 const login = async (req,res)=>{
     const {email, password} = req.body;
     // finding user based on email
@@ -22,16 +21,18 @@ const login = async (req,res)=>{
 
 // signup api
 const signup = async (req, res)=>{
-    const {name, email, password} = req.body;
+    const {name, email, password , user_type} = req.body;
     try{
         const user = new User();
         user.name = name;
         user.email = email;
+        user.user_type = user_type;
         user.password = await bcrypt.hash(password, 10);
 
         await user.save();
         res.json(user)
     }catch(err){
+        console.log("hi")
         res.status(400).json({
             message: err.message
         })
