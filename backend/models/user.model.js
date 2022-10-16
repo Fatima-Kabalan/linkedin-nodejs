@@ -24,9 +24,13 @@ const userSchema = new mongoose.Schema({
     profile_picture:{
         type: String,
     },
-    easy_applty:{
-        type: String,
-        required: true,
+    easy_apply:{
+        resume:{
+            type: String,
+        },
+        question:{
+            type: Boolean,
+        },
     },
 });
 

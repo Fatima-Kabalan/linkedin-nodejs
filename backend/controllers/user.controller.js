@@ -5,6 +5,11 @@ const getAllUsers = async (req, res) => {
     res.json({user: user});
 }
 
+const getAllCompanies = async (req, res) => {
+    const company = req.company;
+    res.json({company: company});
+}
+
 const updateUser = async (req, res) => {
     const {id, ...data} = req.body
     userModel.findByIdAndUpdate(id,{
@@ -25,6 +30,7 @@ const getUser = async(req,res) => {
 module.exports = {
     updateUser,
     getUser,
-    getAllUsers
+    getAllUsers,
+    getAllCompanies
 }
 
