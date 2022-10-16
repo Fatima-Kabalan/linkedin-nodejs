@@ -1,6 +1,7 @@
 
 const userModel = require('../models/user.model');
 
+
 const createUser = async (req, res)=>{
     userModel.create(req.body)
     .then((user)=>res.send(user))
@@ -8,8 +9,8 @@ const createUser = async (req, res)=>{
 }
 
 const getAllUsers = async (req, res) => {
-    const users = await userModel.find();
-    res.send(users)
+    const user = req.user;
+    res.json({user: user});
 }
 
 const updateUser = async (req, res) => {
@@ -31,7 +32,7 @@ const deleteUser = async (req, res) => {
 
 const getUser = async(req,res) => {
     const {id} = req.params;
-    userModel.find({id}).populate('Post').then((user)=>res.send(user))
+    userModel.findOne({id : id}).then((user)=>res.send(user))
 }
 
 

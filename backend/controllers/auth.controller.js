@@ -16,8 +16,7 @@ const login = async (req,res)=>{
     // making sure that the password is matched 
     if(!isMatch) return res.status(404).json({message:"Invalid credentials"});
     // creating a token
-    const token = jwt.sign({email:user.email , name:user.name }, process.env.JWT_SECRET_KEY)
-    expiresIn = "42 hr";
+    const token = jwt.sign({email:user.email , name:user.name }, process.env.JWT_SECRET_KEY);
      res.status(200).json([user,token]);
 }
 
