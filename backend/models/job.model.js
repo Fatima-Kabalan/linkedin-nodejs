@@ -1,6 +1,14 @@
 const mongoose = require('mongoose');
 
 exports.jobSchema = mongoose.Schema({
+    user_id:{
+        type:integer,
+        required:true,
+    },
+    company_id:{
+        type:integer,
+        required:true,
+    },
     title: {
         type: String,
         required: 'name is required'
