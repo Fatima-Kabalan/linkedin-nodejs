@@ -9,12 +9,12 @@ const getAlljobs = async (req, res) => {
 
 const getJob = async (req, res) => {
     const {id} = req.params;
-    const job = await Model.find({id})
+    const job = await jobModel.find({id})
     res.json(job)
 }
 
 
 module.exports = {
     getAlljobs,
-    getjob
+    getJob,
 }

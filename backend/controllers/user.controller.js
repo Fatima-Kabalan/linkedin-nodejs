@@ -1,8 +1,7 @@
 const userModel = require('../models/user.model');
 
 const getAllUsers = async (req, res) => {
-    const user = req.user;
-    res.json({user: user});
+    userModel.find({user_type: "user"}).then((users)=> res.send(users))
 }
 
 const getAllCompanies = async (req, res) => {

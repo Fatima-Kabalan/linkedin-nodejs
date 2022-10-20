@@ -6,8 +6,8 @@ exports.jobSchema = mongoose.Schema({
         required:true,
     },
     company_id:{
-        type:integer,
-        required:true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     title: {
         type: String,
@@ -17,10 +17,10 @@ exports.jobSchema = mongoose.Schema({
         type: String,
         required: true,
     },
-    user: {
+    applied_User:[ {
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'
-    }
+    }],
 });
 
 const model = mongoose.model('Job', jobSchema);

@@ -1,13 +1,9 @@
 const mongoose = require('mongoose');
 
-exports.followCompanySchema = mongoose.Schema({
-    user_id:{
-        type:integer,
-        required:true,
-    },
+const followCompanySchema = new mongoose.Schema({
     company_id:{
-        type:integer,
-        required:true,
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User'
     },
     user: {
         type: mongoose.Schema.Types.ObjectId,

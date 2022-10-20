@@ -15,7 +15,7 @@ const login = async (req,res)=>{
     // making sure that the password is matched 
     if(!isMatch) return res.status(404).json({message:"Invalid credentials"});
     // creating a token
-    const token = jwt.sign({email:user.email , name:user.name }, process.env.JWT_SECRET_KEY);
+    const token = jwt.sign({email:user.email , name:user.name , id : user._id }, process.env.JWT_SECRET_KEY);
      res.status(200).json([user,token]);
 }
 
@@ -29,7 +29,7 @@ const signup = async (req, res)=>{
         user.user_type = user_type;
         user.profile_picture = profile_picture;
         user.password = await bcrypt.hash(password, 10);
-
+        
         await user.save();
         res.json(user)
     }catch(err){

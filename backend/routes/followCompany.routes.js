@@ -1,7 +1,7 @@
 const {Router} = require('express');
-const {  followCompany } = require('../controllers/followCompany.controller');
+const { followCompany } = require('../controllers/followCompany.controller');
 const router = Router();
 
-router.get('/', followCompany);
+router.post('/', followCompany);
 
 module.exports = router;
