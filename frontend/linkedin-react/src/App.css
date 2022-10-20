@@ -15,7 +15,8 @@
   margin: auto;
   background-color: white;
   border-radius: 30px;
-  border-style:groove;
+  border:solid 0.5px #eee;
+  box-shadow:rgba(0,0,0,0.24) 0px 3px 8px;
 }
 
 .login-box {
