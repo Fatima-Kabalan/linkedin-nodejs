@@ -12,7 +12,7 @@ const LogInPage = () =>{
             <form>
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
-                <input type="button" value="Submit" />
+                <input type="button" value="Sign in" />
                 <p className="para-2">New to LinkedIn ? <a href="signup">Join now</a></p>
             </form>
         </div>
