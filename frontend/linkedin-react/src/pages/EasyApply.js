@@ -2,12 +2,13 @@ import React from 'react'
 
 const EasyApply = () => {
   return (
-    <div className='job-card'>
-        <h1>Title</h1>
-        <h1>Text</h1>
-        <button>Add CV/Resume</button>
+    <div class="card">
+        <div class="container">
+            <h4><b>Title</b></h4> 
+            <p>Text</p> 
+            <button>Add CV/Resume</button>
+        </div>
     </div>
-    
   )
 }
 

@@ -7,10 +7,8 @@ import { useState } from 'react';
 const LandingPage = () => {
     // if(localStorage.getItem("user").type === "compnay"){
     //     setCompany(true);
-
     // }
     const [company ,setCompany] = useState(false);
-
     return (
         <>
             <NavUser type={company}/>
