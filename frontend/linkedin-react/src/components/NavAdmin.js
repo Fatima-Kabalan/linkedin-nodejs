@@ -1,7 +1,7 @@
 import { FiBell, FiHome, FiUser } from "react-icons/fi";
 import React from "react";
 
-const NavAdmin = () => {
+const NavAdmin = ({type}) => {
   return (
     <nav className="flex">
       <div className="img-logo">
@@ -24,7 +24,7 @@ const NavAdmin = () => {
           <a href="">Me</a>
         </li>
       </ul>
-      <button type="button">Add job</button>
+      <button type="button" className="">Add job</button>
     </nav>
   );
 };
