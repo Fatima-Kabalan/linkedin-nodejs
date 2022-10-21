@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 
-exports.jobSchema = mongoose.Schema({
-    user_id:{
-        type:integer,
-        required:true,
-    },
+const jobSchema = new mongoose.Schema({
     company_id:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'User'

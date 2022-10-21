@@ -15,6 +15,9 @@ app.use('/user',userRoutes);
 const followRoutes = require('./routes/followCompany.routes');
 app.use('/follow',followRoutes);
 
+const jobRoutes = require('./routes/job.routes');
+app.use('/job',jobRoutes);
+
 
 //server
 app.listen(process.env.PORT, (err)=>{
