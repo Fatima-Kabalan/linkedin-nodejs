@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 
 const LogInPage = () =>{
@@ -14,8 +15,9 @@ const LogInPage = () =>{
                 <input type="email" placeholder="Email" />
                 <input type="password" placeholder="Password" />
                 <input type="button" value="Sign in" />
-                <p className="para-2">New to LinkedIn ?<a href="signup">Join now</a></p>
+                <p className="para-2">New to LinkedIn ?<Link to="/signup">Join now</Link></p>
             </form>
+            
         </div>
         </>
         )

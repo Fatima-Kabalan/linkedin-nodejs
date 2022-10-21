@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const SignUpPage= () =>{
     return(
@@ -15,13 +16,12 @@ const SignUpPage= () =>{
                     <div id="radiobtn" className="flex">
                         <div className="l-radio"> <label>Company</label>
                         <input type="radio" value="Company" name="radiobtn" /></div>
-                       <div className='l-radio'><label>User</label>
+                        <div className='l-radio'><label>User</label>-
                         <input type="radio" value="User" name="radiobtn" /></div>
-                        
                     </div>
                     <input type="button" value="Add profile" />
                     <input type="button" value="Sign up" />
-                    
+                    <Link to="/login">I already have account</Link>
                 </form>
             </div>
         </>
