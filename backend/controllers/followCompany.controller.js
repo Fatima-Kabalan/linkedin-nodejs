@@ -1,6 +1,4 @@
 const followCompanyModel = require('../models/followCompany.model');
-const User = require('../models/user.model');
-
 
 const followCompany = async (req, res) => {
    const {company_id} = req.body;
