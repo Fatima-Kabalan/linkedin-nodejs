@@ -10,7 +10,7 @@ const authMiddleware = async (req, res, next) => {
     try{
         const decoded = jwt.verify(token, process.env.JWT_SECRET_KEY);
         const user = await User.findOne({email: decoded.email}).lean()
-        req.user = {user};
+        req.user = user;
         next()
 
     }catch(err){
