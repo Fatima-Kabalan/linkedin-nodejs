@@ -11,7 +11,6 @@ const EditProfile = () => {
                 <input type="button" value="Edit profile" />
             </form>
         </div>
-       
     </>
   )
 }
