@@ -1,8 +1,7 @@
 import { FiBell, FiHome, FiUser } from "react-icons/fi";
-
 import React from "react";
 
-const Nav = () => {
+const NavAdmin = () => {
   return (
     <nav className="flex">
       <div className="img-logo">
@@ -25,8 +24,9 @@ const Nav = () => {
           <a href="">Me</a>
         </li>
       </ul>
+      <button type="button">Add job</button>
     </nav>
   );
 };
 
-export default Nav;
+export default NavAdmin;

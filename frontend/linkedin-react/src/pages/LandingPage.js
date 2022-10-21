@@ -1,12 +1,12 @@
 import React from 'react';
-import Nav from '../components/Nav';
+import NavUser from '../components/NavUser';
 
 
 
 const LandingPage = () => {
     return (
         <>
-            <Nav/>
+            <NavUser/>
             <div className='grey'>
             </div>
         </>
