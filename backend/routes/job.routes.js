@@ -4,6 +4,6 @@ const router = Router();
 
 router.get('/', getAlljobs);
 router.get('/:id', getJob);
-router.get('/', addJob);
+router.post('/', addJob);
 
 module.exports = router;

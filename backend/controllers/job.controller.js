@@ -12,8 +12,9 @@ const getJob = async (req, res) => {
 }
 
 const addJob = async (req, res) => {
-    const {title,text} = req.params;
-    const job = await jobModel.insert({title,text});
+    const {title,text} = req.body;
+    console.log(req.body)
+    const job = await jobModel.create({title,text});
     res.json(job);
 }
 
